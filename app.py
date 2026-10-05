@@ -64,7 +64,27 @@ div[data-testid="stMetric"] {
   border-radius: 16px;
   background: rgba(255,255,255,.72);
 }
-div[data-testid="stTabs"] button { font-weight: 650; }
+div[data-testid="stTabs"] button {
+  font-weight: 650;
+  color: #365c4d !important;
+}
+div[data-testid="stTabs"] button[aria-selected="true"] {
+  color: #247a55 !important;
+  border-bottom-color: #247a55 !important;
+}
+[data-testid="stTextInput"] input,
+[data-testid="stTextArea"] textarea,
+[data-testid="stNumberInput"] input {
+  background: #ffffff !important;
+  color: #17332d !important;
+  border: 1px solid #b9d2c1 !important;
+  border-radius: 11px !important;
+}
+[data-testid="stTextInput"] input::placeholder,
+[data-testid="stTextArea"] textarea::placeholder {
+  color: #63786d !important;
+  opacity: 1 !important;
+}
 /* Контрастный текст на светлом фоне независимо от темы Streamlit */
 [data-testid="stAppViewContainer"], .stMarkdown, .stMarkdown p,
 [data-testid="stWidgetLabel"], [data-testid="stCaptionContainer"],
@@ -180,7 +200,3 @@ if history:
             st.write(f"**{waste_text}** → {category} · оценка {confidence:.0%} · {created_at}")
 else:
     st.write("История пока пустая.")
-
-
-
-
